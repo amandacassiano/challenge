@@ -1,0 +1,2337 @@
+{
+    "flow": {
+        "onboarding": {
+            "$contentActions": [
+                {
+                    "input": {
+                        "bypass": false,
+                        "$cardContent": {
+                            "document": {
+                                "id": "818c55f7-4a71-4885-827a-aa0a0d73eb59",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": false,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_3",
+                    "$id": "f556d354-4e6e-4d68-9d33-028f00fdbd54",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "exists",
+                            "values": []
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "fallback",
+                "$invalid": false
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "onboarding",
+            "root": true,
+            "$title": "Início",
+            "$position": {
+                "top": "120px",
+                "left": "644px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "fallback": {
+            "$contentActions": [
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "d6d99481-775b-4c41-911f-b69f6f1c5cde",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "error",
+                    "typeOfStateId": "state",
+                    "$connId": "con_8",
+                    "$id": "21568730-42e9-474f-b98f-4363a2fa0520",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "exists",
+                            "values": []
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [
+                {
+                    "$id": "9935e9d1-e0f5-4243-a67a-a12fa9399063",
+                    "$typeOfContent": "",
+                    "type": "ProcessHttp",
+                    "$title": "Requisição HTTP",
+                    "$invalid": false,
+                    "settings": {
+                        "headers": {},
+                        "method": "GET",
+                        "uri": "https://d69c-2804-d47-5b14-fd00-8c0-32cb-b815-1bf6.ngrok-free.app/repositories",
+                        "responseStatusVariable": "response",
+                        "responseBodyVariable": "response"
+                    },
+                    "conditions": []
+                }
+            ],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "onboarding",
+                "$invalid": false
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "fallback",
+            "$title": "Exceções",
+            "$position": {
+                "top": "108px",
+                "left": "904px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "error": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "8249b4d6-0bc3-41fc-b54a-c49ef4051212",
+                        "$typeOfContent": "",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "00000000-0000-0000-0000-000000000002",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "00000000-0000-0000-0000-000000000002",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left",
+                            "editing": false
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "279f717a-0696-4628-ae3e-1fe5e5cb926f",
+                        "$typeOfContent": "",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "00000000-0000-0000-0000-000000000003",
+                            "type": "text/plain",
+                            "content": "Ops... não consegui entender.\n\nVamos tentar novamente, tá bem?",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "00000000-0000-0000-0000-000000000003",
+                                "type": "text/plain",
+                                "content": "Ops... não consegui entender.\n\nVamos tentar novamente, tá bem?"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left",
+                            "editing": false
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "a38d8008-ced9-4575-8cbe-f056bdad87f1",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "onboarding",
+                "$invalid": false
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "error",
+            "$title": "Erro padrão",
+            "$position": {
+                "top": "240px",
+                "left": "877px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "dae29b7c-abaa-4fd4-bdb3-271080f23982": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "f39d73f9-ccb0-4364-b0ee-ccf2e9cbc723",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "866703dd-9fdc-4c39-a7d8-fa0ba576d614",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "866703dd-9fdc-4c39-a7d8-fa0ba576d614",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                        "$typeOfContent": "select-immediate",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "3cd94b59-b1aa-4cf6-b998-ada873edd027",
+                            "type": "application/vnd.lime.select+json",
+                            "content": {
+                                "text": "Se quiser saber mais sobre outros valores é só falar",
+                                "scope": "immediate",
+                                "options": [
+                                    {
+                                        "text": "💙 Be",
+                                        "previewText": "💙 Be",
+                                        "value": null,
+                                        "index": 0,
+                                        "type": null
+                                    },
+                                    {
+                                        "text": "🏳️ Team",
+                                        "previewText": "🏳️ Team",
+                                        "value": null,
+                                        "index": 1,
+                                        "type": null
+                                    },
+                                    {
+                                        "index": -1,
+                                        "text": "⭐ Excellence",
+                                        "previewText": "⭐ Excellence",
+                                        "type": null,
+                                        "value": null
+                                    },
+                                    {
+                                        "index": -1,
+                                        "text": "⚡ Charge",
+                                        "previewText": "⚡ Charge",
+                                        "type": null,
+                                        "value": null
+                                    },
+                                    {
+                                        "index": -1,
+                                        "text": "🎯 Simple",
+                                        "previewText": "🎯 Simple",
+                                        "type": null,
+                                        "value": null
+                                    },
+                                    {
+                                        "index": -1,
+                                        "text": "🚀 Higher",
+                                        "previewText": "🚀 Higher",
+                                        "type": null,
+                                        "value": null
+                                    },
+                                    {
+                                        "index": -1,
+                                        "text": "💡 Desafio",
+                                        "previewText": "💡 Desafio",
+                                        "type": null,
+                                        "value": null
+                                    }
+                                ],
+                                "quikReply": true
+                            },
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "3cd94b59-b1aa-4cf6-b998-ada873edd027",
+                                "type": "application/vnd.lime.select+json",
+                                "content": {
+                                    "text": "Se quiser saber mais sobre outros valores é só falar",
+                                    "scope": "immediate",
+                                    "options": [
+                                        {
+                                            "text": "💙 Be",
+                                            "previewText": "💙 Be",
+                                            "value": null,
+                                            "index": 0,
+                                            "type": null
+                                        },
+                                        {
+                                            "text": "🏳️ Team",
+                                            "previewText": "🏳️ Team",
+                                            "value": null,
+                                            "index": 1,
+                                            "type": null
+                                        },
+                                        {
+                                            "index": -1,
+                                            "text": "⭐ Excellence",
+                                            "previewText": "⭐ Excellence",
+                                            "type": null,
+                                            "value": null
+                                        },
+                                        {
+                                            "index": -1,
+                                            "text": "⚡ Charge",
+                                            "previewText": "⚡ Charge",
+                                            "type": null,
+                                            "value": null
+                                        },
+                                        {
+                                            "index": -1,
+                                            "text": "🎯 Simple",
+                                            "previewText": "🎯 Simple",
+                                            "type": null,
+                                            "value": null
+                                        },
+                                        {
+                                            "index": -1,
+                                            "text": "🚀 Higher",
+                                            "previewText": "🚀 Higher",
+                                            "type": null,
+                                            "value": null
+                                        },
+                                        {
+                                            "index": -1,
+                                            "text": "💡 Desafio",
+                                            "previewText": "💡 Desafio",
+                                            "type": null,
+                                            "value": null
+                                        }
+                                    ],
+                                    "quikReply": true
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": false,
+                        "$cardContent": {
+                            "document": {
+                                "id": "1074767f-9b55-413c-9803-f056de709057",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "5f8b48ca-3f3d-467a-939c-dc332f816a02",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "💙 Be"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "3a76e5cb-fb39-4f78-8c7e-e5509103fbd0",
+                    "$connId": "con_13"
+                },
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "e4a0c70d-10bb-4783-87fc-08f7ff472c83",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🏳️ Team"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "304cbda9-0f10-4897-a5be-1ca068de8102",
+                    "$connId": "con_18"
+                },
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "ace371be-0d27-4fea-a1da-45ad4d81cd5e",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "⭐ Excellence"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "4ca7a437-40a7-4351-b808-4aa6f918835f",
+                    "$connId": "con_23"
+                },
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "5c6c4c5d-1f3c-4bb0-b23c-ebf40bbb558e",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "⚡ Charge"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "6051cafc-1238-4ce3-9661-ccb8a1be09c1",
+                    "$connId": "con_28"
+                },
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "86c9b3ef-69b1-465d-84ee-5db1b34978ee",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🎯 Simple"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "b87b8af0-0ae3-489c-825a-39051b36e634",
+                    "$connId": "con_33"
+                },
+                {
+                    "stateId": "97265f0c-96a1-403e-b623-58a4bb206bfa",
+                    "typeOfStateId": "state",
+                    "$connId": "con_38",
+                    "$id": "243732b0-5872-42cc-be60-9843a826e748",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "💡 Desafio"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "typeOfStateId": "state",
+                    "$contentId": "27b0edd5-1548-45f3-8867-ecbc4dd4bacb",
+                    "$id": "b084c571-5ffe-4dbd-a243-975bb7b5dd1f",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🚀 Higher"
+                            ]
+                        }
+                    ],
+                    "$invalid": false,
+                    "stateId": "84dfe93c-e5a7-4ef8-b8c0-2e92fd2de506",
+                    "$connId": "con_43"
+                },
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_48",
+                    "$id": "5e4f30bb-9a5e-485f-b9f8-7c3ce0327693",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "sair",
+                                "encerrar conversa",
+                                "reiniciar",
+                                "voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [
+                "💙 Be",
+                "🏳️ Team",
+                "⭐ Excellence",
+                "⚡ Charge",
+                "🎯 Simple",
+                "🚀 Higher",
+                "💡 Desafio"
+            ],
+            "$defaultOutput": {
+                "stateId": "error",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+            "$title": "Menu Quick Reply 2",
+            "$position": {
+                "top": "852px",
+                "left": "716px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "d6568ea4-468e-471e-9696-eed1631b2979": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "e89eea70-de83-4e56-b584-61fd28ed10e5",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "247418b7-3329-4b21-ae0a-2176a4ae3306",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "247418b7-3329-4b21-ae0a-2176a4ae3306",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "c67f636c-f9d1-4184-b3b5-ee85163e168f",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "9e73db89-fb13-4d1d-8f44-2fd5a8ea2658",
+                            "type": "text/plain",
+                            "content": "Olá, espero que esteja tudo bem.\nSou a Lora responsável por passar os valores da Take. ",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "9e73db89-fb13-4d1d-8f44-2fd5a8ea2658",
+                                "type": "text/plain",
+                                "content": "Olá, espero que esteja tudo bem.\nSou a Lora responsável por passar os valores da Take. "
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "cf63d18d-3fa1-46c2-a430-430e90e5a5ca",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "0da90ed0-3dc2-43a5-80cf-4cab1fb22cd1",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "0da90ed0-3dc2-43a5-80cf-4cab1fb22cd1",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "67a5c0cf-7746-4bdb-b85d-ac7771686262",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "f920ed6f-878f-4660-a194-f05bbf4d07cc",
+                            "type": "text/plain",
+                            "content": "Mesmo eu sendo um robô e\nnão tendo consciência sobre o que é valores, posso te ajudar de alguma forma.",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "f920ed6f-878f-4660-a194-f05bbf4d07cc",
+                                "type": "text/plain",
+                                "content": "Mesmo eu sendo um robô e\nnão tendo consciência sobre o que é valores, posso te ajudar de alguma forma."
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "3048cbdd-ba57-4135-ade9-ad1847e949c1",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "1c87d782-812c-48f2-818a-3abf562cfcfd",
+                            "type": "text/plain",
+                            "content": "Vamos lá...",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "1c87d782-812c-48f2-818a-3abf562cfcfd",
+                                "type": "text/plain",
+                                "content": "Vamos lá..."
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "dfa98543-5f6a-4297-8164-960f7edd52f2",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "8dd66fdd-11c4-4003-ba1f-dfab1603c7b8",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "8dd66fdd-11c4-4003-ba1f-dfab1603c7b8",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "bc7d9b7a-baf3-4da4-bcda-23c6d4c35c8b",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "80c66901-3cdf-44d5-a45a-3e0f3bdf85e5",
+                            "type": "text/plain",
+                            "content": "A cultura Take tem como base 6 valores que são:",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "80c66901-3cdf-44d5-a45a-3e0f3bdf85e5",
+                                "type": "text/plain",
+                                "content": "A cultura Take tem como base 6 valores que são:"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "1ec79fa2-7447-42f2-82ad-3843cda39795",
+                        "$typeOfContent": "document-select",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "e9502156-1992-4cc5-8195-964cf059296f",
+                            "type": "application/vnd.lime.collection+json",
+                            "content": {
+                                "itemType": "application/vnd.lime.document-select+json",
+                                "items": [
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Be",
+                                                "text": "Pessoas em 1º lugar",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/WDynukL.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "💙 Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "id": 0,
+                                        "editing": false
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Team",
+                                                "text": "Em nosso time, cada pessoa dá o seu melhor",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/oOLaBdm.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "🏳️ Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "id": 1,
+                                        "editing": true
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Execellence",
+                                                "text": "Excelente é o nosso ponto de partida",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/yGheQIb.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "⭐ Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "editing": false,
+                                        "id": 2
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Charge",
+                                                "text": "Apropriar-se para fazer a diferença",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/vDNNb5E.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "⚡ Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "editing": false,
+                                        "id": 3
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Simple",
+                                                "text": "Simplicidade é o último grau de sofisticação",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/03QJvv7.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "🎯 Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "editing": false,
+                                        "id": 4
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Take.Higher",
+                                                "text": "Pensar grande e ir além",
+                                                "type": "image/png",
+                                                "uri": "https://i.imgur.com/ajmAkfY.png",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "🚀 Saber mais"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "editing": false,
+                                        "id": 5
+                                    },
+                                    {
+                                        "header": {
+                                            "type": "application/vnd.lime.media-link+json",
+                                            "value": {
+                                                "title": "Desafio",
+                                                "text": "",
+                                                "type": "image/jpeg",
+                                                "uri": "https://s3-alpha-sig.figma.com/img/7ed0/c940/9d58314f786e078de482d5a8ed40f205?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Mxizzdv6YJTKNDackMIsN0xMgyre6naArB98ws5SxNGCTNf8CtG~Jdax6eaR3GrkY2o1xD4TkwE3eKbx-ROSGNVhvLB7iGMrLPf~AdGNNS5T34s9jho3Z~FA6EirubwMzdHecSGSyGbJrjAAjUQhdrCxLBnXzno2FRIsvMI-svbdz4VwoXX6qTXsWY5Q2t8~hTV08QJ~cwsIVb5KQRc-YVVpTzq8gpUWPRgifD5WHDlsX9-Lua5oQpc-6TswscWKKV7NaUOvo76gZgIMl-dDdlxSnQmKkBpO41TEIkQzH9STBrSpwHGnkuXECz0aTxmsovv88~B3AoOgvEAc1xo8Fw__",
+                                                "aspectRatio": "2:1"
+                                            }
+                                        },
+                                        "options": [
+                                            {
+                                                "label": {
+                                                    "type": "text/plain",
+                                                    "value": "Fazer desafio"
+                                                },
+                                                "value": null
+                                            }
+                                        ],
+                                        "editing": false,
+                                        "id": 6
+                                    }
+                                ]
+                            },
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "e9502156-1992-4cc5-8195-964cf059296f",
+                                "type": "application/vnd.lime.collection+json",
+                                "content": {
+                                    "itemType": "application/vnd.lime.document-select+json",
+                                    "items": [
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Be",
+                                                    "text": "Pessoas em 1º lugar",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/WDynukL.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "💙 Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "id": 0,
+                                            "editing": false
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Team",
+                                                    "text": "Em nosso time, cada pessoa dá o seu melhor",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/oOLaBdm.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "🏳️ Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "id": 1,
+                                            "editing": true
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Execellence",
+                                                    "text": "Excelente é o nosso ponto de partida",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/yGheQIb.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "⭐ Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "editing": false,
+                                            "id": 2
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Charge",
+                                                    "text": "Apropriar-se para fazer a diferença",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/vDNNb5E.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "⚡ Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "editing": false,
+                                            "id": 3
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Simple",
+                                                    "text": "Simplicidade é o último grau de sofisticação",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/03QJvv7.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "🎯 Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "editing": false,
+                                            "id": 4
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Take.Higher",
+                                                    "text": "Pensar grande e ir além",
+                                                    "type": "image/png",
+                                                    "uri": "https://i.imgur.com/ajmAkfY.png",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "🚀 Saber mais"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "editing": false,
+                                            "id": 5
+                                        },
+                                        {
+                                            "header": {
+                                                "type": "application/vnd.lime.media-link+json",
+                                                "value": {
+                                                    "title": "Desafio",
+                                                    "text": "",
+                                                    "type": "image/jpeg",
+                                                    "uri": "https://s3-alpha-sig.figma.com/img/7ed0/c940/9d58314f786e078de482d5a8ed40f205?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Mxizzdv6YJTKNDackMIsN0xMgyre6naArB98ws5SxNGCTNf8CtG~Jdax6eaR3GrkY2o1xD4TkwE3eKbx-ROSGNVhvLB7iGMrLPf~AdGNNS5T34s9jho3Z~FA6EirubwMzdHecSGSyGbJrjAAjUQhdrCxLBnXzno2FRIsvMI-svbdz4VwoXX6qTXsWY5Q2t8~hTV08QJ~cwsIVb5KQRc-YVVpTzq8gpUWPRgifD5WHDlsX9-Lua5oQpc-6TswscWKKV7NaUOvo76gZgIMl-dDdlxSnQmKkBpO41TEIkQzH9STBrSpwHGnkuXECz0aTxmsovv88~B3AoOgvEAc1xo8Fw__",
+                                                    "aspectRatio": "2:1"
+                                                }
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": {
+                                                        "type": "text/plain",
+                                                        "value": "Fazer desafio"
+                                                    },
+                                                    "value": null
+                                                }
+                                            ],
+                                            "editing": false,
+                                            "id": 6
+                                        }
+                                    ]
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": false,
+                        "$cardContent": {
+                            "document": {
+                                "id": "1074767f-9b55-413c-9803-f056de709057",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "304cbda9-0f10-4897-a5be-1ca068de8102",
+                    "typeOfStateId": "state",
+                    "$connId": "con_53",
+                    "$id": "70fbd287-98b9-4b62-8ffa-e105dc9686d0",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🏳️ Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "4ca7a437-40a7-4351-b808-4aa6f918835f",
+                    "typeOfStateId": "state",
+                    "$connId": "con_58",
+                    "$id": "0b257339-163c-49e1-a1b1-1b31c22cd83d",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "⭐ Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "b87b8af0-0ae3-489c-825a-39051b36e634",
+                    "typeOfStateId": "state",
+                    "$connId": "con_63",
+                    "$id": "0d0a450b-e490-4852-afb1-1d6655158521",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🎯 Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "84dfe93c-e5a7-4ef8-b8c0-2e92fd2de506",
+                    "typeOfStateId": "state",
+                    "$connId": "con_68",
+                    "$id": "5c13aa95-b282-44eb-937a-9e9856d06cf2",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "🚀 Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "3a76e5cb-fb39-4f78-8c7e-e5509103fbd0",
+                    "typeOfStateId": "state",
+                    "$connId": "con_73",
+                    "$id": "ccce2986-c36b-4ca5-9aba-c195fca26615",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "💙 Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "97265f0c-96a1-403e-b623-58a4bb206bfa",
+                    "typeOfStateId": "state",
+                    "$connId": "con_78",
+                    "$id": "d95fe2e6-4a15-43e6-9990-7d3aae5abc6f",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "Fazer desafio"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "onboarding",
+                    "typeOfStateId": "state",
+                    "$connId": "con_83",
+                    "$id": "c16349cd-2faa-47e8-9462-537c79e87dfb",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar",
+                                "sair"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "6051cafc-1238-4ce3-9661-ccb8a1be09c1",
+                    "typeOfStateId": "state",
+                    "$connId": "con_88",
+                    "$id": "a4859735-1bae-4c08-97c9-f18c9de01d09",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "⚡ Saber mais"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [
+                "💙 Saber mais",
+                "🏳️ Saber mais",
+                "⭐ Saber mais",
+                "⚡ Saber mais",
+                "🎯 Saber mais",
+                "🚀 Saber mais",
+                "Fazer desafio"
+            ],
+            "$defaultOutput": {
+                "stateId": "error",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "d6568ea4-468e-471e-9696-eed1631b2979",
+            "$title": "Menu em Carrossel 1",
+            "$position": {
+                "top": "360px",
+                "left": "644px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "84dfe93c-e5a7-4ef8-b8c0-2e92fd2de506": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "17a64dde-bc4a-481a-8184-1b4d019fe7a4",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "b1ddeab9-7e3d-4692-a788-0c07e7e3c034",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "b1ddeab9-7e3d-4692-a788-0c07e7e3c034",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "0d89cda4-6b00-4a88-bf43-52913b59c674",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "8ade196c-9c29-460f-9fde-7d4d32d3edce",
+                            "type": "text/plain",
+                            "content": "Não temos medo de sonhar grande, pois sabemos que temos talento e determinação para realizar coisas incríveis!\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "8ade196c-9c29-460f-9fde-7d4d32d3edce",
+                                "type": "text/plain",
+                                "content": "Não temos medo de sonhar grande, pois sabemos que temos talento e determinação para realizar coisas incríveis!\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "dbe9d104-232a-4c38-b9a0-473570008a5d",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_93",
+                    "$id": "6570918a-0388-4351-9d36-290abbd5fe31",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "84dfe93c-e5a7-4ef8-b8c0-2e92fd2de506",
+            "root": false,
+            "$title": "🚀 Saber mais",
+            "$position": {
+                "top": "654px",
+                "left": "1501px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "b87b8af0-0ae3-489c-825a-39051b36e634": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "629b1410-276d-4400-b52f-a2f2841968b9",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "e2db60a2-57dc-49e4-b561-8118d521ca0e",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "e2db60a2-57dc-49e4-b561-8118d521ca0e",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "eec1e6b6-f693-4b80-95f1-d6b00ee7ea71",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "7eecc9c3-ec4b-4db6-b08b-04cefcdf39df",
+                            "type": "text/plain",
+                            "content": "Mantemos o foco no essencial. Menos é mais.\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "7eecc9c3-ec4b-4db6-b08b-04cefcdf39df",
+                                "type": "text/plain",
+                                "content": "Mantemos o foco no essencial. Menos é mais.\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "790a99f7-5235-43ca-9924-53d8914e7f9a",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_98",
+                    "$id": "e0d18967-a064-4add-9633-d6b260fd023a",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [
+                "First option",
+                "Second option"
+            ],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "b87b8af0-0ae3-489c-825a-39051b36e634",
+            "root": false,
+            "$title": "🎯 Saber mais",
+            "$position": {
+                "top": "575px",
+                "left": "48px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "4ca7a437-40a7-4351-b808-4aa6f918835f": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "6ba771c3-24b7-4fd5-a6c0-20f17f0b7cc7",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "7612bc52-57ac-4cb8-b16d-2760fdd8a417",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "7612bc52-57ac-4cb8-b16d-2760fdd8a417",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "cf954419-7363-4cfb-9e7e-68dbdf9dc741",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "4ee5900d-c49d-411f-8786-202e650f798a",
+                            "type": "text/plain",
+                            "content": "Com nosso espírito geek e nossa disposição para aprender e crescer, buscamos estar sempre um passo a frente e superarmos os mais exigentes padrões.\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "4ee5900d-c49d-411f-8786-202e650f798a",
+                                "type": "text/plain",
+                                "content": "Com nosso espírito geek e nossa disposição para aprender e crescer, buscamos estar sempre um passo a frente e superarmos os mais exigentes padrões.\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "6765e811-d0a9-4bb0-9b06-39b5c270b9a2",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_103",
+                    "$id": "e81e9f06-5cc5-4b35-b2cf-6d18a84a3369",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "4ca7a437-40a7-4351-b808-4aa6f918835f",
+            "root": false,
+            "$title": "⭐ Saber mais",
+            "$position": {
+                "top": "458px",
+                "left": "1104px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "304cbda9-0f10-4897-a5be-1ca068de8102": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "1d1c30e3-70f1-438b-a907-46b3a07cf1a4",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "7143917d-7ce2-4a87-99b0-36675df183eb",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "7143917d-7ce2-4a87-99b0-36675df183eb",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "200323d4-1961-4ee4-b950-b5faaa6db4c5",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "80e3c93f-a480-40d3-b937-4a7efd57a6aa",
+                            "type": "text/plain",
+                            "content": "Sabemos que o que faz uma equipe incrível são pessoas incríveis em cooperação. Assim, cada Take.ser busca cumprir sua parte para garantir a vitória do time.\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "80e3c93f-a480-40d3-b937-4a7efd57a6aa",
+                                "type": "text/plain",
+                                "content": "Sabemos que o que faz uma equipe incrível são pessoas incríveis em cooperação. Assim, cada Take.ser busca cumprir sua parte para garantir a vitória do time.\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "9d8af273-bcc9-40ca-a650-707c4e68bbdb",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_108",
+                    "$id": "f14374cd-d01e-4bb7-a35c-5046a09d87e8",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "304cbda9-0f10-4897-a5be-1ca068de8102",
+            "root": false,
+            "$title": "🏳 Saber mais",
+            "$position": {
+                "top": "696px",
+                "left": "515px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "6051cafc-1238-4ce3-9661-ccb8a1be09c1": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "e31b7a07-e13a-4635-858e-663f1d0e4d29",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "f1c7c104-2d4a-4044-b774-ab0d7007e238",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "f1c7c104-2d4a-4044-b774-ab0d7007e238",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "050ecd34-b3c7-4470-8ae1-9a65402bf5ef",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "3ededaee-7a33-4ca3-9ba3-cb17b912e26e",
+                            "type": "text/plain",
+                            "content": "Apostamos em profissionais que chamam a responsabilidade para si e que, sem medo de ousar, transformem o mundo a sua volta, com muita competência e criatividade!\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "3ededaee-7a33-4ca3-9ba3-cb17b912e26e",
+                                "type": "text/plain",
+                                "content": "Apostamos em profissionais que chamam a responsabilidade para si e que, sem medo de ousar, transformem o mundo a sua volta, com muita competência e criatividade!\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "99f0ff53-4b4f-4178-9330-9a931387f754",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_113",
+                    "$id": "7c2f58aa-392d-40cb-b43b-b19bee940c8f",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "6051cafc-1238-4ce3-9661-ccb8a1be09c1",
+            "root": false,
+            "$title": "⚡Saber mais",
+            "$position": {
+                "top": "683px",
+                "left": "88px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "97265f0c-96a1-403e-b623-58a4bb206bfa": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "1ee78221-7c0c-4ca1-9e6e-84d34a5e5f44",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "ed0bf160-89aa-492f-b3a3-f176e9fe934d",
+                            "type": "text/plain",
+                            "content": "Conforme solicitado no e-mail\nenviado, o resultado do desafio\nestá disponível abaixo...",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "ed0bf160-89aa-492f-b3a3-f176e9fe934d",
+                                "type": "text/plain",
+                                "content": "Conforme solicitado no e-mail\nenviado, o resultado do desafio\nestá disponível abaixo..."
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "f39ed19d-dc46-45f6-b83f-8805dad4c361",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "17856c71-b34a-47a3-ad61-7a9a8716568c",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "17856c71-b34a-47a3-ad61-7a9a8716568c",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "b0af9575-5967-480e-a7fc-03e3248f212a",
+                        "$typeOfContent": "raw-content",
+                        "type": "SendRawMessage",
+                        "settings": {
+                            "metadata": {},
+                            "type": "application/vnd.lime.collection+json",
+                            "rawContent": "{{response}}\n"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": false,
+                        "$cardContent": {
+                            "document": {
+                                "id": "2c3b2fd0-7924-4790-be34-5581fff1b286",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "d6568ea4-468e-471e-9696-eed1631b2979",
+                    "typeOfStateId": "state",
+                    "$connId": "con_118",
+                    "$id": "22da7c26-a89e-4d43-b376-b904012e7eb7",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "approximateTo",
+                            "values": [
+                                "Voltar",
+                                "Sair",
+                                "Reiniciar Conversa",
+                                "Retornar"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [
+                {
+                    "$id": "da66334f-94f8-4ced-91e9-a96bee093ab1",
+                    "$typeOfContent": "",
+                    "type": "ProcessHttp",
+                    "$title": "Requisição HTTP",
+                    "$invalid": false,
+                    "settings": {
+                        "headers": {},
+                        "method": "GET",
+                        "uri": "https://blipchallenge.onrender.com/repositories",
+                        "responseStatusVariable": "response",
+                        "responseBodyVariable": "response"
+                    },
+                    "conditions": []
+                }
+            ],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "onboarding",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "97265f0c-96a1-403e-b623-58a4bb206bfa",
+            "root": false,
+            "$title": "Carrossel Repósitorios",
+            "$position": {
+                "top": "376px",
+                "left": "75px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "3a76e5cb-fb39-4f78-8c7e-e5509103fbd0": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "d3e267ab-8af2-4e57-84b8-444ed0da83f8",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "a404a033-15f1-4bc0-a470-c02a3f38aba7",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "a404a033-15f1-4bc0-a470-c02a3f38aba7",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "55cf38fa-a6cb-4f87-9467-72bada92ae3c",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "ff8b7d92-6983-4d9b-9310-496423d25c95",
+                            "type": "text/plain",
+                            "content": "A Take é feita por pessoas e para pessoas. Nossas relações são transparentes e humanizadas.\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "ff8b7d92-6983-4d9b-9310-496423d25c95",
+                                "type": "text/plain",
+                                "content": "A Take é feita por pessoas e para pessoas. Nossas relações são transparentes e humanizadas.\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "dbcc2048-3ebc-4111-b2b7-8b212f1c911b",
+                        "$typeOfContent": "chat-state",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "84a93a9e-62a3-4bfa-b9d3-c810f5567f27",
+                            "type": "application/vnd.lime.chatstate+json",
+                            "content": {
+                                "state": "composing",
+                                "interval": 1000
+                            }
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "84a93a9e-62a3-4bfa-b9d3-c810f5567f27",
+                                "type": "application/vnd.lime.chatstate+json",
+                                "content": {
+                                    "state": "composing",
+                                    "interval": 1000
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "action": {
+                        "$id": "e959836e-8eb9-4132-8c54-85ddd8d9352b",
+                        "$typeOfContent": "text",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "0eb49851-5b9b-4e65-bc14-60ad6f6798d6",
+                            "type": "text/plain",
+                            "content": " Cada cliente, cada parceiro e cada Take.Ser é valorizado e respeitado em sua individualidade e está presente em cada bit de nossa empresa.\n",
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "0eb49851-5b9b-4e65-bc14-60ad6f6798d6",
+                                "type": "text/plain",
+                                "content": " Cada cliente, cada parceiro e cada Take.Ser é valorizado e respeitado em sua individualidade e está presente em cada bit de nossa empresa.\n"
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "3ebfce52-460f-4725-a203-3255022d1ad9",
+                                "type": "text/plain",
+                                "textContent": "Entrada do usuário",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [],
+            "$defaultOutput": {
+                "stateId": "dae29b7c-abaa-4fd4-bdb3-271080f23982",
+                "$invalid": false,
+                "typeOfStateId": "state"
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "3a76e5cb-fb39-4f78-8c7e-e5509103fbd0",
+            "root": false,
+            "$title": "💙 Saber mais",
+            "$position": {
+                "top": "826px",
+                "left": "193px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        },
+        "51ccee4b-e5b3-462e-89af-de0a951830c9": {
+            "$contentActions": [
+                {
+                    "action": {
+                        "$id": "6436ff0b-59e5-44a1-acf6-c2b450ac7af1",
+                        "$typeOfContent": "select",
+                        "type": "SendMessage",
+                        "settings": {
+                            "id": "4593707c-cffa-4e24-ae3e-22b690f196db",
+                            "type": "application/vnd.lime.select+json",
+                            "content": {
+                                "text": "Desculpe! 😞 \nAlgo inesperado ocorreu e não consigo te atender no momento.\n\nPor favor, tente novamente mais tarde.",
+                                "options": [
+                                    {
+                                        "text": "Voltar menu inicial",
+                                        "previewText": "Voltar menu inicial",
+                                        "value": null,
+                                        "index": 0,
+                                        "type": null
+                                    },
+                                    {
+                                        "text": "Encerrar a conversa",
+                                        "previewText": "Encerrar a conversa",
+                                        "value": null,
+                                        "index": 1,
+                                        "type": null
+                                    }
+                                ],
+                                "limitMenu": false
+                            },
+                            "metadata": {}
+                        },
+                        "$cardContent": {
+                            "document": {
+                                "id": "4593707c-cffa-4e24-ae3e-22b690f196db",
+                                "type": "application/vnd.lime.select+json",
+                                "content": {
+                                    "text": "Desculpe! 😞 \nAlgo inesperado ocorreu e não consigo te atender no momento.\n\nPor favor, tente novamente mais tarde.",
+                                    "options": [
+                                        {
+                                            "text": "Voltar menu inicial",
+                                            "previewText": "Voltar menu inicial",
+                                            "value": null,
+                                            "index": 0,
+                                            "type": null
+                                        },
+                                        {
+                                            "text": "Encerrar a conversa",
+                                            "previewText": "Encerrar a conversa",
+                                            "value": null,
+                                            "index": 1,
+                                            "type": null
+                                        }
+                                    ],
+                                    "limitMenu": false
+                                }
+                            },
+                            "editable": true,
+                            "deletable": true,
+                            "position": "left"
+                        }
+                    },
+                    "$invalid": false
+                },
+                {
+                    "input": {
+                        "bypass": true,
+                        "$cardContent": {
+                            "document": {
+                                "id": "a38d8008-ced9-4575-8cbe-f056bdad87f1",
+                                "type": "text/plain",
+                                "content": "Entrada do usuário"
+                            },
+                            "editable": false,
+                            "deletable": true,
+                            "position": "right",
+                            "editing": false
+                        },
+                        "$invalid": false
+                    },
+                    "$invalid": false
+                }
+            ],
+            "$conditionOutputs": [
+                {
+                    "stateId": "onboarding",
+                    "typeOfStateId": "state",
+                    "$connId": "con_123",
+                    "$contentId": "6436ff0b-59e5-44a1-acf6-c2b450ac7af1",
+                    "$id": "33304f89-9b77-4d2d-a8cd-daa4dc3a70ee",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "Voltar menu inicial"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                },
+                {
+                    "stateId": "onboarding",
+                    "typeOfStateId": "state",
+                    "$connId": "con_128",
+                    "$contentId": "6436ff0b-59e5-44a1-acf6-c2b450ac7af1",
+                    "$id": "f4eb6541-6ac3-4a77-9511-3f5520a4b4ae",
+                    "conditions": [
+                        {
+                            "source": "input",
+                            "comparison": "equals",
+                            "values": [
+                                "Encerrar a conversa"
+                            ]
+                        }
+                    ],
+                    "$invalid": false
+                }
+            ],
+            "$enteringCustomActions": [],
+            "$leavingCustomActions": [],
+            "$inputSuggestions": [
+                "Voltar menu inicial",
+                "Encerrar a conversa"
+            ],
+            "$defaultOutput": {
+                "stateId": "onboarding",
+                "$invalid": false
+            },
+            "isAiGenerated": false,
+            "$tags": [],
+            "id": "51ccee4b-e5b3-462e-89af-de0a951830c9",
+            "$title": "Erro Api",
+            "$position": {
+                "top": "249px",
+                "left": "1115px"
+            },
+            "$invalidContentActions": false,
+            "$invalidOutputs": false,
+            "$invalidCustomActions": false,
+            "$invalid": false
+        }
+    },
+    "globalActions": {
+        "$contentActions": [],
+        "$conditionOutputs": [],
+        "$enteringCustomActions": [],
+        "$leavingCustomActions": [],
+        "$inputSuggestions": [],
+        "$defaultOutput": {
+            "stateId": "fallback",
+            "$invalid": false
+        },
+        "isAiGenerated": false,
+        "$tags": [],
+        "id": "global-actions",
+        "$invalidContentActions": false,
+        "$invalidOutputs": false,
+        "$invalidCustomActions": false
+    }
+}

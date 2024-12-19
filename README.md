@@ -1,10 +1,12 @@
 # Challenge - Bot de Contato Inteligente da Blip
 
 ## Descrição do Projeto
-Este projeto foi desenvolvido como parte de um desafio técnico para a empresa Blip.
-Um chatbot integrado à uma API RESTful, criado na plataforma Blip com um fluxo conversacional que apresenta os 5 repositórios mais antigos do Github da Blip "takenet", que estiverem na linguagem C#.
-Uma API RESTful em Node.js, que consome a API pública do GitHub e busca os dados da conta takenet da Blip no Github.
-As informações dos repositórios são extraidas no Chatbot e exibidas no formato de Carrossel.
+
+Desenvolvi esse projeto como parte de um desafio técnico para a empresa Blip.
+
+O desafio é criar um chatbot integrado à uma API RESTful na plataforma Blip que lista as informaçs sobre os 5 repositórios na linguagem C# mais antigos da conta da Blip no Github "takenet", ordenados do mais antigo para o mais novo. 
+Uma API RESTful em Node.js realizando a integração com a API pública do GitHub para extrair os dados da conta da Blip.
+As informações dos repositórios são extraidas da API no Chatbot e renderizadas no formato de Carrossel através da interação Conteúdo Dinâmico.
 
 
 
@@ -12,27 +14,29 @@ As informações dos repositórios são extraidas no Chatbot e exibidas no forma
 
 ## Sobre a Estrutura do Projeto
 challenge/
-├── Api/                    
-│   ├── server.js           # Arquivo principal da API
-│   ├── package.json        # Configurações e dependências do projeto
-│   ├── package-lock.json   # Controle de versões das dependências
-│   ├── .env                # Variáveis de ambiente
-│   └── README.md           # Documentação detalhada da API
-├── Flow/                   
-│   └── mybotflow.json      # Json do fluxo completo
-└── README.md  
+Api/     
+    server.js           
+    package.json       
+    package-lock.json   
+    .env                      
+Flow/                   
+    mybotflow.json      
+
+README.md              
 
 
 ## Tecnologias utilizadas
 
-Node.js: Para criar a API intermediária.
+Node.js: Para criação da API.
+Render : Escolhi o render para realizar o deploy da api.
 Express: Framework para criar endpoints RESTful.
-Blip: Plataforma para construção do chatbot.
+Blip: Plataforma para construção do fluxo conversacional do Chatbot.
 Axios: Para consumir a API pública do GitHub.
+Ngrok: Utilizei durante os testes.
 
-## Como iniciar o projeto?
+## Como acessar a API?
 
-Entre no diretório Api:
+No terminal digite:
 
 cd Api
 
@@ -43,6 +47,8 @@ npm install
 Inicie o servidor:
 
 node server.js
+ou
+npm start
 
 Acesse:
 
@@ -51,11 +57,12 @@ http://localhost:3000/repositories
 ## Como acessar o Chatbot?
 
 
-Encontre o arquivo contendo o JSON do Chatbot no caminho:
+Encontre o arquivo contendo o JSON do Chatbot dentro do repositório, no caminho:
 
-Flow/mybotflow.json.
+Flow/
+    mybotflow.json
 
-Siga as instruções para importar e exportar o fluxo no Blip: https://help.blip.ai/hc/pt-br/articles/360059353133-Como-importar-o-fluxo-de-um-bot-no-Builder
+Siga as instruções para exportar o fluxo no Blip: https://help.blip.ai/hc/pt-br/articles/360059353133-Como-importar-o-fluxo-de-um-bot-no-Builder
 
 
 
